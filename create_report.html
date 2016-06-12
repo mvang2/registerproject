@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function disabledate() {
+	if (document.getElementById("start").disabled == false)
+	{
+		document.getElementById("start").disabled = true;
+		document.getElementById("end").disabled = true;
+	}
+	else
+	{
+		document.getElementById("start").disabled = false;
+		document.getElementById("end").disabled = false;
+	}
+}
+var first = 'admin';
+var lname = 'admin';
+var address1 = 'root';
+var address2 = 'root';
+var city = 'root';
+var state = 'MI';
+var zip = 0;
+	function gohome() {
+		window.location = 'homepage.php?status=new&fname='+first+'&lname='+lname+'&address1='+address1+'&address2='+address2+'&city='+city+'&state='+state+'&zip='+zip;
+}
+</script>
+	<button type="button" style="position: absolute;
+    right: 600px;
+    border: 3px solid #73AD21;
+    padding: 10px;" value="Go Back" onclick="gohome()" >Go Back</button>
+
+<form action="show_create_date.php">
+  <label><b>Select all</b></label>
+  <input type="checkbox" name="all" value="all" onclick="disabledate()" checked><br>
+  Start Date:
+  <input id="start" type="date" name="start" disabled >
+  End Date:
+  <input id="end" type="date" name="end" disabled >
+  <input type="submit">
+</form>
+
+</body>
+</html>
